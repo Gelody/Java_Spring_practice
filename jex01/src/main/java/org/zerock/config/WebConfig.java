@@ -1,5 +1,4 @@
 package org.zerock.config;
-
 import org.springframework.web.servlet.support.
 AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -13,14 +12,13 @@ AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return new Class[] {RootConfig.class} ;
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		// TODO Auto-generated method stub
-		return null;
+		return new String[] { "/" };
 	}
 
 }
