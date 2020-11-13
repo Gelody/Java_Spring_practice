@@ -1,4 +1,5 @@
 package org.zerock.config;
+
 import org.springframework.web.servlet.support.
 AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -20,5 +21,5 @@ AbstractAnnotationConfigDispatcherServletInitializer {
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
 	}
-
+	
 }
