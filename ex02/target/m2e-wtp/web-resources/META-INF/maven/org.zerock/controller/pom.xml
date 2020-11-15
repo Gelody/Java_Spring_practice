@@ -43,7 +43,7 @@
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
-			<version>3.4.6</version>
+			<version>3.4.1</version>
 		</dependency>
 		
 		<!--  https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -55,9 +55,9 @@
 		
 		
 		<dependency>
-			<groupId>org.bgee.log4jdbc-log4j2</groupId>
-			<artifactId>log4jdbc-log4j2-jdbc4</artifactId>
-			<version>1.16</version>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.5</version>
 		</dependency>
 		
 		
