@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+	<select id="getList" resultType="org.zerock.domain.BoardVO">
+<![CDATA[select * from tbl_board where id > 0]]>
+
+	</select>
+
+	<insert id="insert">
+		insert into tbl_board(id, title, content, writer)
+		values ((select *from (select max(id)+1 from tbl_board) next),  #{title}, #{content}, #{writer})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty= "id" order="BEFORE" resultType="long">
+		select (select *from (select max(id)+1 from tbl_board) next)
+		</selectKey>
+
+		insert into tbl_board(id, title, content, writer)
+		values (#{id}, #{title}, #{content}, #{writer})
+	</insert>
+	
+</mapper>
