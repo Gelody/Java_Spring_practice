@@ -23,4 +23,8 @@
 		values (#{id}, #{title}, #{content}, #{writer})
 	</insert>
 	
+	<select id="read" resultType="org.zerock.domain.BoardVO">
+		select * from tbl_board where id = #{id}
+	</select>
+	
 </mapper>
