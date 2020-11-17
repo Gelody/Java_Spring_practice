@@ -27,4 +27,8 @@
 		select * from tbl_board where id = #{id}
 	</select>
 	
+	<delete id="delete">
+		delete from tbl_board where id = #{id}
+	</delete>
+	
 </mapper>
