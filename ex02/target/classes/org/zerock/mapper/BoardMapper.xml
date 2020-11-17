@@ -31,4 +31,13 @@
 		delete from tbl_board where id = #{id}
 	</delete>
 	
+	<update id="update">
+		update tbl_board
+		set title= #{title},
+		content= #{content},
+		writer= #{writer},
+		updateDate= now()
+		where id = #{id}
+	</update>
+	
 </mapper>
