@@ -33,13 +33,13 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.read(id);
 	}
 
-//	@Override
-//	public List<BoardVO> getList() {
-//	
-//		log.info("getList.........");
-//		
-//		return mapper.getList();
-//	}
+	@Override
+	public List<BoardVO> getList() {
+	
+		log.info("getList.........");
+		
+		return mapper.getList();
+	}
 	
 	@Override
 	public boolean modify(BoardVO board) {
@@ -57,9 +57,10 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.delete(id) == 1;
 	}
 
-	@Override
-	public List<BoardVO> getList() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public List<BoardVO> getList() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 }
