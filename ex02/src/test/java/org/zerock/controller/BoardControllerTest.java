@@ -67,7 +67,7 @@ public class BoardControllerTest {
 //		
 //		log.info(resultPage);
 //	}
-	
+//	
 //	@Test
 //	public void testGet() throws Exception {
 //		
@@ -77,7 +77,7 @@ public class BoardControllerTest {
 //				.andReturn()
 //				.getModelAndView().getModelMap());
 //	}
-	
+//	
 //	@Test
 //	public void testModify() throws Exception {
 //		
@@ -91,7 +91,7 @@ public class BoardControllerTest {
 //		
 //		log.info(resultPage);
 //	}
-	
+//	
 //	@Test
 //	public void testRemove()throws Exception {
 //		//삭제전 데이터베이스에 게시물 번호 확인할 것
