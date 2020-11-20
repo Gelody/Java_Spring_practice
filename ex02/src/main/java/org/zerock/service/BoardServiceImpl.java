@@ -41,12 +41,6 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.getList();
 	}
 	
-//	@Override
-//	public List<BoardVO> getList() {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-	
 	@Override
 	public boolean modify(BoardVO board) {
 		
