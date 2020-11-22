@@ -33,7 +33,8 @@
 					<c:forEach items="${list}" var="board">
 						<tr>
 							<td><c:out value="${board.id}" /></td>
-							<td><c:out value="${board.title}" /></td>
+							<td><a href='/board/get?id=<c:out value="${board.id }" />'>
+							<c:out value="${board.title}" /></a></td>
 							<td><c:out value="${board.writer}" /></td>
 							<td><fmt:formatDate pattern="yyyy-MM-dd"
 									value="${board.regdate}" /></td>
