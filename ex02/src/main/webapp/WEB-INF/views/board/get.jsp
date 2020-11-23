@@ -44,18 +44,34 @@ pageEncoding="UTF-8"%>
 						readonly="readonly">
 					</div>
 					
-					<button data-oper='modify'
-						class="btn btn-default"
-						onclick="location.href='/board/modify?id=<c:out value="${board.id }"/>'">
-											Modify
-						</button>
+					<button data-oper='modify' class="btn btn-default">Modify</button>
+					<button data-oper='list' class="btn btn-info">List</button>
 					
-					<button data-oper='list' 
-						class="btn btn-info"
-						onclick="location.href='/board/list'">
-											List
-					</button>
+					<form id='openForm' action="/board/modify" method="get">
+						<input type='hidden' id='id' name='id' value='<c:out value="${board.id }"/>'>
+					</form>
 					
+					
+					<script type="text/javascript">
+					$(document).ready(function() {
+						
+						var operForm = $("#openForm");
+						
+						$("button[data-oper='modify']").on("click", function(e) {
+						
+							operForm.attr("action", "/board/modify").submit();
+						
+						});
+						
+						$("button[data-oper='list']").on("click", function(e) {
+						
+							operForm.find("#id").remove();
+							operForm.attr("action", "/board/list")
+							operForm.submit();
+						
+						});
+					});
+					</script>
 			</div>
 			<!-- end panel-body -->
 		
