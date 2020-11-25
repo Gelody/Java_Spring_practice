@@ -4,6 +4,17 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zerock.mapper.BoardMapper">
 
+	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+<![CDATA[
+SELECT
+  @rownum:=@rownum+1 as rn, 
+  dic.*
+FROM tbl_board dic,
+(SELECT @rownum:=0) dic
+limit #{pageNum}, #{amount};
+]]>
+	</select>
+
 	<select id="getList" resultType="org.zerock.domain.BoardVO">
 <![CDATA[select * from tbl_board where id > 0]]>
 
@@ -16,7 +27,7 @@
 	
 	<insert id="insertSelectKey">
 		<selectKey keyProperty= "id" order="BEFORE" resultType="long">
-		select (select *from (select max(id)+1 from tbl_board) next)
+		select (select * from (select max(id)+1 from tbl_board) next)
 		</selectKey>
 
 		insert into tbl_board(id, title, content, writer)
